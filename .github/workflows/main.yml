@@ -1,0 +1,22 @@
+name: Transfer Issues
+
+on:
+  # Allows to run this workflow manually from the Actions tab
+  schedule:
+    - cron: '0,30 8-19 * * *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  transfer:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    steps:
+      - name: Transfer Issues
+        uses: HosniD/transfer-issue@v0.1.1
+        with:
+          auth-secret: ${{ secrets.AUTH_TOKEN }}
+          repo-source: odoo-support
+          repo-destination: odoo-app
+          owner-destination: bryntum
+          labels: backlog
+          state: open
