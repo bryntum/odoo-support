@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Transfer Issues
-        uses: HosniD/transfer-issue@v0.1.4
+        uses: HosniD/transfer-issue@v0.1.6
         with:
           auth-secret: ${{ secrets.AUTH_TOKEN }}
           repo-source: odoo-support
